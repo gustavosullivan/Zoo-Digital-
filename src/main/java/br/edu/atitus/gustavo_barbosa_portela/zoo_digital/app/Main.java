@@ -26,7 +26,7 @@ public class Main {
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             opcao = sc.nextInt();
-            sc.nextLine(); // limpar buffer
+            sc.nextLine();
 
             switch (opcao) {
                 case 1:
@@ -58,18 +58,18 @@ public class Main {
                             novoAnimal = new Pato(nome, idade, corPenas);
                             break;
                         case "sardinha":
-                            System.out.print("Tipo de água (doce/salgada): ");
+                            System.out.print("Tipo de água doce/salgada: ");
                             String tipoAgua = sc.nextLine();
                             novoAnimal = new Sardinha(nome, idade, tipoAgua);
                             break;
                         default:
-                            System.out.println("Tipo de animal não reconhecido!");
+                            System.out.println("Tipo de animal não reconhecido");
                             break;
                     }
 
                     if (novoAnimal != null) {
                         animais.add(novoAnimal);
-                        System.out.println("Animal cadastrado com sucesso!");
+                        System.out.println("Animal cadastrado com sucesso");
                     }
                     break;
 
@@ -86,7 +86,7 @@ public class Main {
                     System.out.println("\n=== Animais Corredores ===");
                     for (Animal a : animais) {
                         if (a instanceof Corredor) {
-                            Corredor c = (Corredor) a; // Downcasting seguro
+                            Corredor c = (Corredor) a;
                             System.out.println(a.getNome() + " é corredor.");
                             c.correr();
                         }
